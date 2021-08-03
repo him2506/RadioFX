@@ -25,7 +25,7 @@ SECRET_KEY = '^s7om(50^w=&0q5-m)*1*rac5^x6*$^lh5v$q&+6f-k)w)$ya$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['radiofx.herokuapp.com']
 
 
 # Application definition
