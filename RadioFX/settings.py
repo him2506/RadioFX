@@ -121,9 +121,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # static file ko add kiya inside static folder of BASE_DIR.
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
+STATIC_ROOT = os.join(BASE_DIR, "staticfiles")
 
 # Adding media directory
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
