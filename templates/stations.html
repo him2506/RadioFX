@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}RadioFX{% endblock %}
+
+{% load static %}
+{% block body %}
+
+
+
+<h1>Hindi Channels</h1>
+<div class="sim_sta">
+{% for i in hindiStations %}
+<div class="card">
+  <img src="/media/{{i.image}}" alt="" style="width:100%">
+  <h1>{{i.station_name}}</h1>
+  <button class="play_btn"><a href="/station/st{{i.station_id}}">Play</a></button>
+</div>
+  {% endfor %}
+</div>
+<a href="#">ViewAll</a>
+<hr>
+
+<h1>English Channels</h1>
+<div class="sim_sta">
+{% for i in engStations %}
+<div class="card">
+  <img src="/media/{{i.image}}" alt="" style="width:100%">
+  <h1>{{i.station_name}}</h1>
+  <button class="play_btn"><a href="/station/st{{i.station_id}}">Play</a></button>
+</div>
+  {% endfor %}
+</div>
+<a href="#">ViewAll</a>
+<hr>
+
+<h1>Sports Channels</h1>
+<div class="sim_sta">
+{% for i in engStations %}
+<div class="card">
+  <img src="/media/{{i.image}}" alt="" style="width:100%">
+  <h1>{{i.station_name}}</h1>
+  <button class="play_btn"><a href="/station/st{{i.station_id}}">Play</a></button>
+</div>
+  {% endfor %}
+</div>
+<a href="#">ViewAll</a>
+<hr>
+
+<h1>News Channels</h1>
+<div class="sim_sta">
+{% for i in engStations %}
+<div class="card">
+  <img src="/media/{{i.image}}" alt="" style="width:100%">
+  <h1>{{i.station_name}}</h1>
+  <button class="play_btn"><a href="/station/st{{i.station_id}}">Play</a></button>
+</div>
+  {% endfor %}
+</div>
+<a href="#">ViewAll</a>
+<hr>
+
+<h1>International Channels</h1>
+<div class="sim_sta">
+{% for i in engStations %}
+<div class="card">
+  <img src="/media/{{i.image}}" alt="" style="width:100%">
+  <h1>{{i.station_name}}</h1>
+  <button class="play_btn"><a href="/station/st{{i.station_id}}">Play</a></button>
+</div>
+  {% endfor %}
+</div>
+<a href="#">ViewAll</a>
+<hr>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <script src="{% static 'player.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=B612:ital@1&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    <title>{% block title %}{% endblock %}</title>
+
+    <style>
+        {% block css %}{% endblock %}
+    </style>
+</head>
+<body>
+
+<nav>
+    <div id="logo">
+      <a href="/"><strong>RadioFX</strong></a>
+    </div>
+    <div id="myLinks">
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/station">Stations</a></li>
+          <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+    <div id="hamburger">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+</nav>
+
+
+
+{% block body %}{% endblock %}
+
+
+    <footer>
+        <div class="com_details">
+            <div class="about">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odio, quaerat provident voluptatum
+                    voluptas nostrum dignissimos minima in itaque nam minus quisquam.</p>
+            </div>
+            <div class="det">
+                <h1>Company Details</h1>
+
+                <li>Your Company Ltd</li>
+
+                <li>1481 Creekside Lane Avila Beach, CA 93424, P.O. BOX 68</li>
+
+                <li>+53 345 7953 32453</li>
+
+                <li>office@youremail.com</li>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>Copyright &copy; 2020 All rights reserved &nbsp;|&nbsp;Designed With <span class="heart"></span> by
+                Himanchal Singh </p>
+        </div>
+    </footer>
+
+
+<script>
+
+
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+
+{% block js %}
+{% endblock %}
+</script>
+
+
+
+
+</body>
+</html>

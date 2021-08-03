@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}{{station.station_name}}{% endblock %}
+
+{% load static %}
+
+
+{% block body %}
+<div class="fm_det">
+    <div class="station_det">
+        <h2>{{station.station_name}}</h2>
+        <img src="/media/{{station.image}}" alt="" style="width: 200px;height:200px">
+        <h3>Language : <span>{{station.Language}}</span></h3>
+        <h4>Slogan : </h4><span> {{station.Slogan}}</span>
+        <h3>Details:</h3>
+        <p>{{station.desc}}</p>
+    </div>
+
+<div class="rplayer">
+  <div class="glow">
+    <div class="text-container" >
+<!--      <span class="text">Fm 92.7</span>-->
+       <img src="/media/{{station.image}}"  alt="" style="width:150px;height:150px;border-radius: 50%; ">
+      <br>
+      <span class="text">{{station.Slogan}}</span>
+      <br>
+      <div class="playback_controls">
+
+      <button onclick="playpause()"><i class="fa fa-play"></i><i class="fa fa-pause"></i></button>
+      </div>
+      <br>
+      <div class="volume_controls">
+      <button id="mute" onclick="mute()"><i class="fa fa-volume-up"></i></button>
+      <input type="range" id="volume" oninput="setVolume(this.value)" min="0" max="1" step="0.01" value="1">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--<h1>Similar Radio Channels</h1>-->
+<!--<div class="sim_sta">-->
+<!--{% for station in similar_sta %}-->
+<!--<div class="card">-->
+<!--  <img src="/media/{{station.image}}" alt="" style="width:100%">-->
+<!--  <h1>{{station.station_name}}</h1>-->
+<!--  <button class="play_btn"><a href="station/st{{station.station_id}}">Play</a></button>-->
+<!--</div>-->
+<!--  {% endfor %}-->
+<!--</div>-->
+<!--<a href="#">ViewAll</a>-->
+<!--<hr>-->
+
+
+<h1>Similar Radio Channels</h1>
+<div class="sim_sta">
+{% for station in st %}
+<div class="card">
+  <img src="/media/{{station.image}}" alt="" style="width:100%">
+  <h1>{{station.station_name}}</h1>
+  <button class="play_btn"><a href="/station/st{{station.station_id}}">Play</a></button>
+</div>
+  {% endfor %}
+</div>
+<a href="#">ViewAll</a>
+<hr>
+
+
+
+{% endblock %}
+
+
+{% block js %}
+var song = new Audio;
+var muted = false;
+var vol = 1;
+song.type = 'audio/mpeg';
+<!--song.src = 'http://peridot.streamguys.com:7150/Mirchi';//Audio file source url-->
+
+song.src = '{{station.url}}';//Audio file source url
+
+
+{% endblock %}
