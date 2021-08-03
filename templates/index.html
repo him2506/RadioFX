@@ -10,7 +10,7 @@
 <div class="sim_sta">
   {% for station in topSta %}
 <div class="card">
-  <img src="/staticfiles/{{station.image}}" alt="" style="width:100%">
+  <img src="/staticfiles/{{station.image}}"  alt="" style="width:100%">
   <h1>{{station.station_name}}</h1>
   <button class="play_btn"><a href="/station/st{{station.station_id}}">Play</a></button>
 </div>
