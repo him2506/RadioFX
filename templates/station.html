@@ -9,7 +9,7 @@
 <div class="fm_det">
     <div class="station_det">
         <h2>{{station.station_name}}</h2>
-        <img src="/media/{{station.image}}" alt="" style="width: 200px;height:200px">
+        <img src="{% static {{station.image}} %}" alt="" style="width: 200px;height:200px">
         <h3>Language : <span>{{station.Language}}</span></h3>
         <h4>Slogan : </h4><span> {{station.Slogan}}</span>
         <h3>Details:</h3>
